@@ -8,10 +8,11 @@ ENV POSTGRES_PASSWORD=test
 
 # Copy the AdventureWorks folder and its contents into the container
 COPY ./000_initdb.sql /docker-entrypoint-initdb.d/000_initdb.sql
-COPY ./001_adventureworks.sql /docker-entrypoint-initdb.d/001_adventureworks.sql
-COPY ./002_chinook.sql /docker-entrypoint-initdb.d/002_chinook.sql
-COPY ./003_ssakila_schema.sql /docker-entrypoint-initdb.d/003_ssakila_schema.sql
-COPY ./004_ssakila_data.sql /docker-entrypoint-initdb.d/004_ssakila_data.sql
+COPY ./001_adventureworks_schema.sql /docker-entrypoint-initdb.d/001_adventureworks_schema.sql
+COPY ./002_adventureworks_data.sql /docker-entrypoint-initdb.d/002_adventureworks_data.sql
+COPY ./003_chinook.sql /docker-entrypoint-initdb.d/003_chinook.sql
+COPY ./004_ssakila_schema.sql /docker-entrypoint-initdb.d/004_ssakila_schema.sql
+COPY ./005_ssakila_data.sql /docker-entrypoint-initdb.d/005_ssakila_data.sql
 
 # Initialize the Adventureworks, Chinook, and Sakila databases
 RUN echo "Initializing databases..."
